@@ -1,6 +1,6 @@
 {
   "name": "saucepan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Saucepan helps you to store the uploaded files.",
   "main": "index.js",
   "scripts": {
