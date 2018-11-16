@@ -1,7 +1,10 @@
 # saucepan
 saucepan helps you to store your uploads.
 
+[![npm](https://img.shields.io/npm/v/saucepan.svg)](https://github.com/znyakaynz/number-formatter)
+
 ## Installation
+
 ```
 npm install --save saucepan
 ```
