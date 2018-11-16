@@ -1,5 +1,5 @@
 # saucepan
-Saucepan helps you to store your uploads.
+saucepan helps you to store your uploads.
 
 ## Installation
 ```
@@ -41,3 +41,6 @@ app.listen(8000);
 | Key | Description | Type |
 | --- | --- | --- |
 | buffer | Buffer representing the file to be stored | Buffer |
+
+
+method ```storeToLocal(path) ``` accepts a path in the server directory. If the path doesn't exists it'll throw an error.
