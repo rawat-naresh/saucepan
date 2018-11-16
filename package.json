@@ -1,0 +1,27 @@
+{
+  "name": "saucepan",
+  "version": "1.0.0",
+  "description": "Saucepan helps you to store the uploaded files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rawat-naresh/saucepan.git"
+  },
+  "keywords": [
+    "imageupload",
+    "save"
+  ],
+  "author": "Naresh Rawat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rawat-naresh/saucepan/issues"
+  },
+  "homepage": "https://github.com/rawat-naresh/saucepan#readme",
+  "dependencies": {
+    "sharp": "^0.21.0",
+    "shortid": "^2.2.14"
+  }
+}
