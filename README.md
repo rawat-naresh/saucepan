@@ -16,9 +16,13 @@ let instance = saucepan(options);
 #### options
 ```saucepan(options)``` accepts an object with following parameters
 
-| Key | Description | Type |
-| --- | --- | --- |
-| buffer | Buffer representing the file | Buffer |
+| Key | Description | Type | optional |
+| ------ | ------ | ------ | ----------------------------- |
+| buffer | Buffer representing the file | Buffer |false |
+| original | Set to false if you don't want to store the original image | Boolean | true defaults:true |
+| sizes | Represents the sizes of the image. ```sizes``` is an array of objects having two keys ```path``` and ```xy```. ```path``` is a string that will be concatnated to the resized images and ```xy``` indicated the height and width of the image. | Array | true |
+
+
 
 
 ## Usage
@@ -87,10 +91,10 @@ app.listen(8000);
 #### options
 method ```storeToS3(S3options)``` will accept an object with following parameters
 
-| Key | Description | Type |
-| --- | --- | --- |
-| bucket | S3 bucket name | String |
-| accessKeyId | S3 access key | String |
-| secretAccessKey | S3 secret access key | String |
-| acl | S3 ACL | String |
+| Key | Description | Type | optional |
+| --- | --- | --- | --- |
+| bucket | S3 bucket name | String | false |
+| accessKeyId | S3 access key | String | false |
+| secretAccessKey | S3 secret access key | String | false |
+| acl | S3 ACL | String | true;defaults:'public-read'
 
