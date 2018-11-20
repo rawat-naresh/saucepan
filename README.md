@@ -6,16 +6,16 @@ saucepan helps you to store your uploads.
 ## Installation
 
 
-```
+```javascript
 npm install --save saucepan
 ```
 ## Creating an instance 
-```
+```javascript
 let saucepan = require('saucepan');
 let instance = saucepan(options);
 ```
 #### options
-```saucepan(options)``` accepts an object with following parameters
+`saucepan(options)` accepts an object with following parameters
 
 | Key | Description | Type | optional |
 | ------ | ------ | ------ | ----------------------------- |
@@ -29,7 +29,7 @@ let instance = saucepan(options);
 ## Usage
 #### Storing to server directory
 
-```
+```javascript
 let express = require('express');
 let multer = require('multer');
 let saucepan = require('saucepan');
@@ -56,11 +56,11 @@ app.post('/upload', upload.single('img'), (req, res) => {
 app.listen(8000);
 ```
 
-method ```storeToLocal(path) ``` accepts a path in the server directory. If the path doesn't exists it'll throw an error.
+method `storeToLocal(path)` accepts a path in the server directory. If the path doesn't exists it'll throw an error.
 
 #### Storing to S3 bucket
 
-```
+```javascript
 let express = require('express');
 let multer = require('multer');
 let saucepan = require('saucepan');
@@ -91,7 +91,7 @@ app.post('/upload', upload.single('img'), (req, res) => {
 app.listen(8000);
 ```
 #### options
-method ```storeToS3(S3options)``` will accept an object with following parameters
+method `storeToS3(S3options)` will accept an object with following parameters
 
 | Key | Description | Type | optional |
 | --- | --- | --- | --- |
@@ -103,7 +103,7 @@ method ```storeToS3(S3options)``` will accept an object with following parameter
 
 #### Resizing image before storing
 
-```
+```javascript
 //imports
 //setup
 
