@@ -5,6 +5,7 @@ saucepan helps you to store your uploads.
 
 ## Installation
 
+
 ```
 npm install --save saucepan
 ```
@@ -50,6 +51,7 @@ app.post('/upload', upload.single('img'), (req, res) => {
   }
   
 });
+
 
 app.listen(8000);
 ```
@@ -98,3 +100,48 @@ method ```storeToS3(S3options)``` will accept an object with following parameter
 | secretAccessKey | S3 secret access key | String | false |
 | acl | S3 ACL | String | true;defaults:'public-read'
 
+
+#### Resizing image before storing
+
+```
+//imports
+//setup
+
+  let options = {
+    buffer:req.file.buffer,
+    original:false,//donot store original image
+    sizes:[{
+      path:'large',
+      xy:800
+    },{
+      path:'medium',
+      xy:400
+    },{
+      path:'small',
+      xy:60
+    }]
+  }
+    
+  let s3Options = {
+    bucket:"BUCKET-NAME",
+    accessKeyId:"ACCESSKEYID",
+    secretAccessKey:"SECRETACCESSKEY",
+  };
+  saucepan(options).storeToS3(s3Options).then(function(results){
+    console.log(results);
+    
+    /*[ { ETag: '"cdb84f413588cededvdre2b"',
+          VersionId: 'mMdoR3iPcl1csAjY7oRA4O7F.wJ3BcMV',
+          path: 'gvK6YAoc0-large.png' },
+        { ETag: '"3b964a1e0ff8988dea121e1170321"',
+          VersionId: 'D63K2Qa_pI9pLRwTy4Rxa_b6o9Kr54WM',
+          path: 'gvK6YAoc0-medium.png' },
+        { ETag: '"e7211836192739f64772b23de33cd579"',
+          VersionId: 'gXNUNLg8QIi5TG2.nfdDU9al_xTX0SAn',
+          path: 'gvK6YAoc0-small.png' } 
+      ]*/
+
+  }).catch(function(err){
+    console.log(err)
+  });
+```
